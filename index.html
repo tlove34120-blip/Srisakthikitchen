@@ -3,67 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sri Sakthi Kitchen</title>
+<meta name="theme-color" content="#101010">
+<title>Sri Sakthi Kitchen | Homemade Catering</title>
+<meta name="description" content="Sri Sakthi Kitchen offers authentic homemade South Indian food, catering, corporate orders and regular food delivery in Perundurai, Erode.">
 
 <style>
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
   background: #101010;
-  color: white;
+  color: #fff;
   font-family: Arial, sans-serif;
+  line-height: 1.7;
 }
 
 header {
-  padding: 25px 8%;
+  padding: 20px 8%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background: #080808;
   border-bottom: 1px solid #c9a34c;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo {
   color: #d7b45b;
-  font-size: 23px;
+  font-size: 22px;
   font-weight: bold;
+}
+
+nav {
+  display: flex;
+  gap: 22px;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  margin-left: 20px;
+  transition: .3s;
+}
+
+nav a:hover {
+  color: #d7b45b;
 }
 
 .hero {
   min-height: 550px;
   display: flex;
   align-items: center;
-  padding: 70px 9%;
-  background: linear-gradient(90deg, #080808, #08080888),
-  url("https://images.unsplash.com/photo-1547592180-85f173990554?w=1600") center/cover;
-  perspective: 1000px;
+  padding: 80px 9%;
+  background:
+    linear-gradient(90deg, #080808 10%, #080808bb 60%, #08080855),
+    url("https://images.unsplash.com/photo-1547592180-85f173990554?w=1600")
+    center/cover no-repeat;
 }
 
 .hero-content {
   max-width: 650px;
-  animation: reveal 1.5s ease both;
+  animation: reveal 1.2s ease;
 }
 
 .hero h1 {
-  font-size: clamp(40px, 7vw, 65px);
+  font-size: clamp(38px, 7vw, 65px);
   color: #e2bd65;
-  margin-bottom: 20px;
-  animation: glow 3s infinite alternate;
+  line-height: 1.2;
+  margin-bottom: 22px;
 }
 
 .hero p {
   color: #eee;
   font-size: 18px;
-  line-height: 1.8;
   margin-bottom: 30px;
 }
 
@@ -71,33 +88,35 @@ nav a {
   display: inline-block;
   background: #d7b45b;
   color: #111;
-  padding: 15px 28px;
-  border-radius: 5px;
+  padding: 13px 26px;
+  border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
-  transition: .4s;
+  transition: .3s;
 }
 
 .btn:hover {
-  transform: translateY(-5px) scale(1.06);
-  box-shadow: 0 0 30px #d7b45b88;
+  transform: translateY(-4px);
+  box-shadow: 0 0 25px #d7b45b88;
 }
 
 section {
-  padding: 75px 9%;
+  padding: 75px 8%;
 }
 
 h2 {
   color: #d7b45b;
   text-align: center;
-  margin-bottom: 30px;
-  font-size: 35px;
+  margin-bottom: 25px;
+  font-size: 34px;
 }
 
 .about {
   text-align: center;
+  max-width: 850px;
+  margin: auto;
   color: #ccc;
-  line-height: 2;
+  font-size: 17px;
 }
 
 .services {
@@ -108,37 +127,98 @@ h2 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 25px;
+  max-width: 1100px;
+  margin: auto;
 }
 
 .card {
-  padding: 35px 20px;
+  padding: 30px 20px;
   background: #252525;
   border: 1px solid #b99445;
   border-radius: 12px;
   text-align: center;
-  transition: .5s;
-  animation: float 4s ease-in-out infinite;
-  transform-style: preserve-3d;
+  transition: .4s;
 }
 
 .card:hover {
-  transform: rotateY(12deg) rotateX(8deg) translateY(-12px);
-  box-shadow: 0 15px 35px #d7b45b55;
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px #d7b45b44;
 }
 
 .card h3 {
   color: #e2bd65;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .card p {
   color: #ccc;
-  line-height: 1.7;
+}
+
+.food-section {
+  background: linear-gradient(135deg, #15100b, #302014);
+}
+
+.food-intro {
+  text-align: center;
+  color: #eee0c4;
+  margin-bottom: 35px;
+}
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.food-card {
+  background: #24180f;
+  border: 1px solid #d7b45b;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: .4s;
+}
+
+.food-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px #d7b45b55;
+}
+
+.food-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  display: block;
+}
+
+.food-info {
+  padding: 20px;
+  text-align: center;
+}
+
+.food-info h3 {
+  color: #e9c76b;
+  margin-bottom: 10px;
+}
+
+.food-info p {
+  color: #ddd;
+  font-size: 14px;
 }
 
 .contact {
   text-align: center;
-  line-height: 2.2;
+  background: #191919;
+}
+
+.contact p {
+  color: #ddd;
+  margin: 8px 0;
+}
+
+.contact a {
+  color: #d7b45b;
 }
 
 footer {
@@ -146,147 +226,78 @@ footer {
   padding: 25px;
   text-align: center;
   color: #aaa;
+  font-size: 14px;
+}
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 22px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 13px 20px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 9999;
+  box-shadow: 0 4px 15px #0008;
+  transition: .3s;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.06);
 }
 
 @keyframes reveal {
-  from { opacity: 0; transform: translateY(40px) rotateX(10deg); }
-  to { opacity: 1; transform: translateY(0) rotateX(0); }
-}
-
-@keyframes glow {
-  from { text-shadow: 0 0 10px #d7b45b55; }
-  to { text-shadow: 0 0 30px #d7b45bbb; }
-}
-
-@keyframes float {
-  0%, 100% { translate: 0 0; }
-  50% { translate: 0 -10px; }
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media(max-width: 700px) {
-  header { flex-direction: column; gap: 15px; }
-  nav a { margin: 0 5px; font-size: 12px; }
-}
-</style>/* SRI SAKTHI 3D FOOD SHOWCASE */
+  header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 17px 5%;
+  }
 
-.food-showcase {
-  padding: 80px 25px;
-  background: linear-gradient(135deg, #15100b, #302014);
-  color: #f5d77a;
-  text-align: center;
-}
+  nav {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-.food-showcase h2 {
-  font-size: 38px;
-  margin-bottom: 12px;
-  color: #e9c76b;
-}
+  nav a {
+    font-size: 13px;
+  }
 
-.food-showcase p {
-  color: #eee0c4;
-}
+  .hero {
+    min-height: 480px;
+    padding: 55px 7%;
+  }
 
-.food-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  max-width: 1000px;
-  margin: 45px auto 0;
-}
+  .hero h1 {
+    font-size: 40px;
+  }
 
-.food-card {
-  background: linear-gradient(145deg, #49321e, #17100b);
-  border: 1px solid #b99748;
-  border-radius: 22px;
-  padding: 35px 15px;
-  perspective: 1000px;
-  transition: transform 0.5s, box-shadow 0.5s;
-  animation: foodFloat 4s ease-in-out infinite;
-}
+  section {
+    padding: 55px 6%;
+  }
 
-.food-card:nth-child(2) {
-  animation-delay: .5s;
-}
+  h2 {
+    font-size: 28px;
+  }
 
-.food-card:nth-child(3) {
-  animation-delay: 1s;
-}
-
-.food-card:hover {
-  transform: rotateY(12deg) rotateX(8deg) scale(1.06);
-  box-shadow: 0 15px 35px #d7b45b55;
-}
-
-.food-icon {
-  font-size: 75px;
-  display: block;
-  margin-bottom: 20px;
-  filter: drop-shadow(0 10px 10px #000);
-  animation: foodSpin 6s ease-in-out infinite;
-}
-
-.food-card h3 {
-  color: #f4d27b;
-  font-size: 22px;
-}
-
-@keyframes foodFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-}
-
-@keyframes foodSpin {
-  0%, 100% { transform: rotateY(0deg); }
-  50% { transform: rotateY(15deg); }
-}
-
-@media(max-width:600px) {
-  .food-showcase h2 { font-size: 28px; }
-}<style>
-.food-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 20px;
-}
-
-.food-card {
-  background: #24180f;
-  border: 1px solid #d7b45b;
-  border-radius: 20px;
-  padding: 20px;
-  text-align: center;
-  transition: .5s;
-  box-shadow: 0 10px 25px #0008;
-}
-
-.food-card:hover {
-  transform: translateY(-12px) rotateY(8deg);
-  box-shadow: 0 20px 35px #d7b45b55;
-}
-
-.food-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 15px;
-}
-
-.food-card h3 {
-  color: #e9c76b;
-  font-size: 22px;
-}
-
-.food-card p {
-  color: white;
-  font-size: 15px;
-}
-
-@media(max-width:700px) {
-  .food-grid {
-    grid-template-columns: 1fr;
+  .whatsapp-btn {
+    bottom: 15px;
+    right: 12px;
+    font-size: 13px;
+    padding: 12px 16px;
   }
 }
 </style>
@@ -296,10 +307,12 @@ footer {
 
 <header>
   <div class="logo">SRI SAKTHI KITCHEN</div>
+
   <nav>
     <a href="#home">Home</a>
     <a href="#about">About</a>
     <a href="#services">Services</a>
+    <a href="#food">Foods</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
@@ -307,94 +320,120 @@ footer {
 <div class="hero" id="home">
   <div class="hero-content">
     <h1>Authentic Homemade Taste</h1>
-    <p>Traditional homemade flavours, premium quality and delicious food for every occasion.</p>
+    <p>
+      Traditional homemade flavours, premium quality
+      and delicious food for every occasion.
+    </p>
     <a href="#contact" class="btn">Get Catering Quote</a>
   </div>
 </div>
 
 <section id="about">
-  <h2>About Us</h2>
+  <h2>About Sri Sakthi Kitchen</h2>
+
   <div class="about">
-    Welcome to Sri Sakthi Kitchen! We bring love, quality and
-    traditional homemade taste to every meal. Great taste and
-    best quality, even in small quantities.
+    Welcome to Sri Sakthi Kitchen! We bring love,
+    quality and traditional homemade taste to every meal.
+
+    Great taste and best quality, even in small quantities.
+    Freshly prepared food with care for every customer.
   </div>
 </section>
 
 <section class="services" id="services">
   <h2>Our Services</h2>
+
   <div class="cards">
+
     <div class="card">
       <h3>Homemade Catering</h3>
       <p>Fresh food for your special occasions.</p>
     </div>
+
     <div class="card">
       <h3>Corporate Orders</h3>
-      <p>Quality food for offices and events.</p>
+      <p>Quality food for offices and business events.</p>
     </div>
+
     <div class="card">
       <h3>Regular Delivery</h3>
       <p>Reliable food delivery services.</p>
     </div>
+
     <div class="card">
       <h3>Special Events</h3>
       <p>Delicious food for every celebration.</p>
     </div>
+
   </div>
-</section><section class="food-section" id="services">
+</section>
 
-<h2>Our South Indian Specials</h2>
+<section class="food-section" id="food">
+  <h2>Our South Indian Specials</h2>
 
-<p style="color:#ccc; margin-bottom:40px;">
-Authentic Taste. Traditional Recipes. Premium Quality.
-</p>
+  <p class="food-intro">
+    Authentic Taste • Traditional Recipes • Premium Quality
+  </p>
 
-<div class="food-grid">
+  <div class="food-grid">
 
-<div class="food-card">
-<img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=700"
-alt="South Indian Traditional Food">
-<div class="food-info">
-<h3>Traditional Meals</h3>
-<p>Delicious traditional meals prepared with homemade care.</p>
-</div>
-</div>
+    <div class="food-card">
+      <img
+        src="https://images.unsplash.com/photo-1547592180-85f173990554?w=700"
+        alt="Traditional Indian Food">
+      <div class="food-info">
+        <h3>Traditional Meals</h3>
+        <p>Delicious traditional meals prepared with homemade care.</p>
+      </div>
+    </div>
 
-<div class="food-card">
-<img src="https://images.unsplash.com/photo-1630383249896-424e482df921?w=700"
-alt="South Indian Dosa">
-<div class="food-info">
-<h3>Idli & Dosa</h3>
-<p>Fresh South Indian breakfast favourites with chutneys.</p>
-</div>
-</div>
+    <div class="food-card">
+      <img
+        src="https://images.unsplash.com/photo-1630383249896-424e482df921?w=700"
+        alt="Dosa">
+      <div class="food-info">
+        <h3>Idli & Dosa</h3>
+        <p>Fresh South Indian breakfast favourites with chutneys.</p>
+      </div>
+    </div>
 
-<div class="food-card">
-<img src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=700"
-alt="Indian Thali">
-<div class="food-info">
-<h3>South Indian Thali</h3>
-<p>A delightful variety of traditional flavours in one meal.</p>
-</div>
-</div>
+    <div class="food-card">
+      <img
+        src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=700"
+        alt="Indian Thali">
+      <div class="food-info">
+        <h3>South Indian Thali</h3>
+        <p>A delightful variety of traditional flavours in one meal.</p>
+      </div>
+    </div>
 
-<div class="food-card">
-<img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=700"
-alt="Catering Service">
-<div class="food-info">
-<h3>Special Catering</h3>
-<p>Food arrangements for functions and corporate events.</p>
-</div>
-</div>
+    <div class="food-card">
+      <img
+        src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=700"
+        alt="Food Catering">
+      <div class="food-info">
+        <h3>Special Catering</h3>
+        <p>Food arrangements for functions and corporate events.</p>
+      </div>
+    </div>
 
-</div>
+  </div>
 </section>
 
 <section id="contact" class="contact">
   <h2>Contact Us</h2>
+
   <p>Perundurai, Erode, Tamil Nadu</p>
-  <p>Email: srisakthikitchen@gmail.com</p>
+
+  <p>
+    Email:
+    <a href="mailto:srisakthikitchen@gmail.com">
+      srisakthikitchen@gmail.com
+    </a>
+  </p>
+
   <br>
+
   <a class="btn" href="mailto:srisakthikitchen@gmail.com">
     Contact Us
   </a>
@@ -403,50 +442,14 @@ alt="Catering Service">
 <footer>
   © 2026 Sri Sakthi Kitchen. All Rights Reserved.
 </footer>
-<a href="https://wa.me/916369243501?text=Hello%20Sri%20Sakthi%20Kitchen%2C%20I%20would%20like%20to%20get%20a%20catering%20quotation"
-target="_blank"
-class="whatsapp-btn">
+
+<a
+  href="https://wa.me/916369243501?text=Hello%20Sri%20Sakthi%20Kitchen%2C%20I%20would%20like%20to%20get%20a%20catering%20quotation"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="whatsapp-btn">
   WhatsApp for Catering
 </a>
 
-<style>
-.whatsapp-btn {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background: #25D366;
-  color: white;
-  padding: 15px 22px;
-  border-radius: 40px;
-  text-decoration: none;
-  font-weight: bold;
-  z-index: 9999;
-}
-</style><section class="food-showcase">
-  <h2>Our Signature South Indian Foods</h2>
-  <p>Traditional Taste • Homemade Quality • Freshly Prepared</p>
-
-  <div class="food-grid">
-
-    <div class="food-card">
-      <span class="food-icon">🍛</span>
-      <h3>South Indian Meals</h3>
-      <p>Authentic Traditional Flavours</p>
-    </div>
-
-    <div class="food-card">
-      <span class="food-icon">🥞</span>
-      <h3>Golden Dosa</h3>
-      <p>Crispy & Delicious</p>
-    </div>
-
-    <div class="food-card">
-      <span class="food-icon">🍚</span>
-      <h3>Homemade Special</h3>
-      <p>Made with Love & Care</p>
-    </div>
-
-  </div>
-</section>
 </body>
 </html>
