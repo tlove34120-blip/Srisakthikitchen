@@ -181,17 +181,31 @@ h2 {
 }
 
 .food-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 35px #d7b45b55;
+    transform: perspective(1000px) translateY(-12px) rotateX(5deg) rotateY(-3deg) scale(1.03);
+    box-shadow: 0 22px 40px rgba(215, 180, 91, 0.45);
 }
 
 .food-card img {
-  width: 100%;
-  height: 210px;
-  object-fit: cover;
-  display: block;
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+    animation: foodFloat 4s ease-in-out infinite;
 }
 
+.food-card:hover img {
+    transform: scale(1.08) translateZ(15px);
+}
+
+@keyframes foodFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+}
 .food-info {
   padding: 20px;
   text-align: center;
@@ -377,46 +391,53 @@ footer {
 
   <div class="food-grid">
 
-    <div class="food-card">
-      <img
-        src="https://images.unsplash.com/photo-1547592180-85f173990554?w=700"
-        alt="Traditional Indian Food">
-      <div class="food-info">
-        <h3>Traditional Meals</h3>
-        <p>Delicious traditional meals prepared with homemade care.</p>
-      </div>
-    </div>
+      <div class="food-card">
+  <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=700" alt="Traditional Veg Meals">
+  <div class="food-info">
+    <h3>Traditional Veg Meals</h3>
+    <p>Complete South Indian meals, rice, sambar, rasam, poriyal, kootu and traditional sides.</p>
+  </div>
+</div>
 
-    <div class="food-card">
-      <img
-        src="https://images.unsplash.com/photo-1630383249896-424e482df921?w=700"
-        alt="Dosa">
-      <div class="food-info">
-        <h3>Idli & Dosa</h3>
-        <p>Fresh South Indian breakfast favourites with chutneys.</p>
-      </div>
-    </div>
+<div class="food-card">
+  <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=700" alt="Non Veg Specials">
+  <div class="food-info">
+    <h3>Non-Veg Specials</h3>
+    <p>Chicken, mutton, fish and delicious non-vegetarian meal varieties.</p>
+  </div>
+</div>
 
-    <div class="food-card">
-      <img
-        src="https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=700"
-        alt="Indian Thali">
-      <div class="food-info">
-        <h3>South Indian Thali</h3>
-        <p>A delightful variety of traditional flavours in one meal.</p>
-      </div>
-    </div>
+<div class="food-card">
+  <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=700" alt="Variety Rice">
+  <div class="food-info">
+    <h3>Variety Rice</h3>
+    <p>Lemon rice, tomato rice, coconut rice, tamarind rice and ghee rice.</p>
+  </div>
+</div>
 
-    <div class="food-card">
-      <img
-        src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=700"
-        alt="Food Catering">
-      <div class="food-info">
-        <h3>Special Catering</h3>
-        <p>Food arrangements for functions and corporate events.</p>
-      </div>
-    </div>
+<div class="food-card">
+  <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=700" alt="Snacks and Starters">
+  <div class="food-info">
+    <h3>Snacks & Starters</h3>
+    <p>Delicious starters, evening snacks and party favourites.</p>
+  </div>
+</div>
 
+<div class="food-card">
+  <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=700" alt="Sweets and Desserts">
+  <div class="food-info">
+    <h3>Sweets & Desserts</h3>
+    <p>Traditional sweets, desserts and delicious payasam varieties.</p>
+  </div>
+</div>
+
+<div class="food-card">
+  <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=700" alt="All Events Catering">
+  <div class="food-info">
+    <h3>All Events Catering</h3>
+    <p>Birthday, corporate, wedding, engagement, family functions, private parties and outdoor catering.</p>
+  </div>
+</div>
   </div>
 </section>
 
